@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.android.apis"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testApplicationId "com.example.android.apis.tests"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+}
+
+dependencies {
+    api "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+}

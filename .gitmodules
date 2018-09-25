@@ -1,0 +1,4 @@
+[submodule "DemoCollection"]
+    path = DemoCollection
+    url = git@github.com:JWBlueLiu/DemoCollection.git
+    ignore = dirty

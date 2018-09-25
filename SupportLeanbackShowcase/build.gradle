@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+  // This will be set by local.properties file. By default it
+  // will use the public release version (24.0.0). You can run
+  // python build-local.py to build the local verison. That script will
+  // figure out the local library version based on maven metadata for leanback
+  // library and update local.properties file. Gradle build file in turn
+  // will pick up the settings from local.properties.
+  Properties properties = new Properties()
+  properties.load(project.rootProject.file('local.properties').newDataInputStream())
+  supportLibVersion = properties.getProperty('LIBRARY_VERSION')
+  supportLibVersion = supportLibVersion ? supportLibVersion : "27.0.3"
+  localRepo = properties.getProperty('LOCAL_REPO')
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
